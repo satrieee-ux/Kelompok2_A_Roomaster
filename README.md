@@ -2,7 +2,7 @@
 
 **Aplikasi Peminjaman Ruangan dan Pelaporan Kerusakan Fasilitas ITS**
 
-Proyek Kelompok 2 – DPP A, Institut Teknologi Sepuluh Nopember (ITS).
+Proyek Kelompok 2 – TEKBER A, Institut Teknologi Sepuluh Nopember (ITS).
 
 ## Anggota Kelompok
 
@@ -42,7 +42,7 @@ Pola *feature-first*. Satu-satunya lapisan yang berbicara ke Supabase adalah `da
 
 ## Struktur Folder (kerangka awal)
 
-Keadaan saat ini: belum ada layar. Folder `features/*` hanya berisi `.gitkeep` agar struktur terlihat di Git, dan `router.dart` baru memuat satu rute placeholder. Layar, repo, provider, dan rute ditambahkan bertahap oleh paket commit 1-7.
+Keadaan saat ini: belum ada layar. Folder `features/*` hanya berisi `.gitkeep` agar struktur terlihat di Git, dan `router.dart` baru memuat satu rute placeholder. Layar, repo, provider, dan rute ditambahkan bertahap oleh bagian commit 1-7 (keterangan di bawah).
 
 ```
 Kelompok2_A_Roomaster/
@@ -133,10 +133,10 @@ Kelompok2_A_Roomaster/
 └── pubspec.yaml
 ```
 
-### Yang akan ditambahkan oleh paket commit
-- `lib/data/`: `*_repo.dart` (akses Supabase), `*_providers.dart` (Riverpod), `refresh_all.dart` (paket 1)
-- `lib/features/<fitur>/`: layar dan file pendampingnya (paket 1-7)
-- `lib/app/router.dart`: rute bertambah di tiap paket
+### Yang akan ditambahkan oleh bagian commit
+- `lib/data/`: `*_repo.dart` (akses Supabase), `*_providers.dart` (Riverpod), `refresh_all.dart` (bagian 1)
+- `lib/features/<fitur>/`: layar dan file pendampingnya (bagian 1-7)
+- `lib/app/router.dart`: rute bertambah di tiap bagian
 
 ### Penjelasan folder
 | Folder | Isi |
@@ -150,24 +150,12 @@ Kelompok2_A_Roomaster/
 | `supabase/` | migrasi SQL, seed, dan reset database |
 | `docs/SETUP.md` | langkah setup lokal dan izin platform |
 
-## Menjalankan
 
-Ringkas (rincian di [`docs/SETUP.md`](docs/SETUP.md)):
+## PIC Pengerjaan
 
-```bash
-flutter create --project-name roomaster --org id.ac.its --platforms android,ios .   # sekali, oleh koordinator
-cp env.example.json env.json        # isi SUPABASE_URL dan SUPABASE_ANON_KEY
-flutter pub get
-flutter run --dart-define-from-file=env.json
-```
+Repositori dibangun bertahap lewat 7 bagian. Tiap bagian dikerjakan oleh satu anggota di branch sendiri, dibuka sebagai Pull Request, dan di-merge ke `main` **berurutan** (bagian N hanya dimulai setelah bagian N-1 ter-merge). Panduan taruh file, perubahan router, dan pesan commit ada di README di dalam tiap bagian.
 
-`env.json` berisi kunci proyek dan **tidak boleh di-commit** (sudah ada di `.gitignore`).
-
-## Urutan Pengerjaan (Commit Bertahap)
-
-Repositori dibangun bertahap lewat 7 paket. Tiap paket dikerjakan oleh satu anggota di branch sendiri, dibuka sebagai Pull Request, dan di-merge ke `main` **berurutan** (paket N hanya dimulai setelah paket N-1 ter-merge). Panduan taruh file, perubahan router, dan pesan commit ada di README di dalam tiap paket.
-
-| Paket | Pemegang | Cakupan |
+| Bagian | Pemegang | Cakupan |
 |-------|----------|---------|
 | 1 | Muhammad Satrio Adjie | Lapisan data, splash, login |
 | 2 | Nayla Eka Widazulfia | Detail ruangan, ruang chat, ringkasan laporan |
@@ -177,15 +165,3 @@ Repositori dibangun bertahap lewat 7 paket. Tiap paket dikerjakan oleh satu angg
 | 6 | Nayla Rameyza Alya | Daftar ruangan, pencarian, form booking, check-in |
 | 7 | Salsa Aulia Azzahra H. | Dokumen booking, check-out, scan QR, modul Sarpras, RoleGate |
 
-## Commit Awal (oleh orang 1)
-
-```bash
-git init -b main
-git add .
-git commit -m "chore: kerangka awal proyek Roomaster"
-```
-Langkah GitHub selengkapnya ada di README Paket 1.
-
-## Database
-
-Skema, logika, RLS, dan seed ada di `supabase/`. Proyek Supabase kelompok memakai kondisi database terbaru yang sama dengan berkas-berkas ini.

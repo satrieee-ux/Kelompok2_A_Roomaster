@@ -1,0 +1,16 @@
+# Flutter / Dart
+.dart_tool/
+.packages
+.pub-cache/
+build/
+*.iml
+.idea/
+.flutter-plugins
+.flutter-plugins-dependencies
+pubspec.lock
+
+# Rahasia: JANGAN di-commit. Salin dari env.example.json
+env.json
+.env
+*.keystore
+key.properties

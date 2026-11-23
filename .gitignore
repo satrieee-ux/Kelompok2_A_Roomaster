@@ -7,7 +7,6 @@ build/
 .idea/
 .flutter-plugins
 .flutter-plugins-dependencies
-pubspec.lock
 
 # Rahasia: JANGAN di-commit. Salin dari env.example.json
 env.json

@@ -8,13 +8,13 @@ Proyek Kelompok 2 – TEKBER A, Institut Teknologi Sepuluh Nopember (ITS).
 
 | No | Nama | NRP |
 |----|------|-----|
-| 1 | Nayla Eka Widazulfia | _(isi)_ |
+| 1 | Nayla Eka Widazulfia | 5026241100 |
 | 2 | Muhammad Satrio Adjie | 5026241065 |
-| 3 | Christine Rotua Deborah H. | _(isi)_ |
-| 4 | Thalia Harnum Fathina | _(isi)_ |
-| 5 | Naina Mazaya Putri | _(isi)_ |
-| 6 | Nayla Rameyza Alya | _(isi)_ |
-| 7 | Salsa Aulia Azzahra H. | _(isi)_ |
+| 3 | Christine Rotua Deborah H. | 5026241028 |
+| 4 | Thalia Harnum Fathina | 5026241201 |
+| 5 | Naina Mazaya Putri | 5026241183 |
+| 6 | Nayla Rameyza Alya | 5026241059 |
+| 7 | Salsa Aulia Azzahra H. | 5026241019 |
 
 ## Deskripsi Singkat
 
@@ -153,7 +153,7 @@ Kelompok2_A_Roomaster/
 
 ## PIC Pengerjaan
 
-Repositori dibangun bertahap lewat 7 bagian. Tiap bagian dikerjakan oleh satu anggota di branch sendiri, dibuka sebagai Pull Request, dan di-merge ke `main` **berurutan** (bagian N hanya dimulai setelah bagian N-1 ter-merge). Panduan taruh file, perubahan router, dan pesan commit ada di README di dalam tiap bagian.
+Repositori dibangun bertahap lewat 7 bagian. Tiap bagian dikerjakan oleh satu anggota di branch sendiri, dibuka sebagai Pull Request, dan di-merge ke `main` **berurutan**
 
 | Bagian | Pemegang | Cakupan |
 |-------|----------|---------|

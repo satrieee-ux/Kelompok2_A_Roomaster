@@ -8,6 +8,12 @@ import '../features/auth/its_password_screen.dart';
 import '../features/auth/login_screen.dart';
 import '../features/auth/signup_screen.dart';
 import '../features/auth/splash_screen.dart';
+import '../features/booking/booking_form_screen.dart';
+import '../features/booking/booking_review_screen.dart';
+import '../features/booking/bookings_screen.dart';
+import '../features/booking/check_in_screen.dart';
+import '../features/booking/check_in_success_screen.dart';
+import '../features/booking/check_out_success_screen.dart';
 import '../features/home/home_screen.dart';
 import '../features/inbox/chat_list_screen.dart';
 import '../features/inbox/chat_room_screen.dart';
@@ -19,6 +25,8 @@ import '../features/report/report_history_screen.dart';
 import '../features/report/report_submitted_screen.dart';
 import '../features/report/report_summary_screen.dart';
 import '../features/rooms/room_detail_screen.dart';
+import '../features/rooms/rooms_screen.dart';
+import '../features/rooms/search_screen.dart';
 import '../features/sarpras/damage_report_screen.dart';
 import '../features/sarpras/status_updated_screen.dart';
 import '../features/tu/tu_ratings_screen.dart';
@@ -61,7 +69,17 @@ final routerP = Provider<GoRouter>((ref) {
       GoRoute(path: '/signup', builder: (_, __) => const SignupScreen()),
       GoRoute(path: '/login-its/email', builder: (_, s) => ItsEmailScreen(prefill: s.extra as String?)),
       GoRoute(path: '/login-its/password', builder: (_, s) => ItsPasswordScreen(email: s.extra as String? ?? '')),
+
+      // Ruangan & pencarian
+      GoRoute(path: '/rooms', builder: (_, s) => RoomsScreen(category: s.uri.queryParameters['category'])),
       GoRoute(path: '/rooms/:id', builder: (_, s) => RoomDetailScreen(id: _id(s), initialTab: int.tryParse(s.uri.queryParameters['tab'] ?? '') ?? 0)),
+      GoRoute(path: '/rooms/:id/book', builder: (_, s) => BookingFormScreen(roomId: _id(s))),
+      GoRoute(path: '/search', builder: (_, __) => const SearchScreen()),
+      GoRoute(path: '/booking/:id/ringkasan', builder: (_, s) => BookingReviewScreen(id: _id(s))),
+      GoRoute(path: '/bookings', builder: (_, __) => const BookingsScreen()),
+      GoRoute(path: '/checkin/:id', builder: (_, s) => CheckInScreen(id: _id(s))),
+      GoRoute(path: '/checkin/:id/success', builder: (_, __) => const CheckInSuccessScreen()),
+      GoRoute(path: '/checkout/:id/success', builder: (_, s) => CheckOutSuccessScreen(id: _id(s))),
       GoRoute(
         path: '/qreporting/report',
         builder: (_, s) => ReportFormScreen(roomId: int.tryParse(s.uri.queryParameters['room'] ?? ''), draftId: int.tryParse(s.uri.queryParameters['draft'] ?? '')),
